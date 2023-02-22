@@ -1,0 +1,147 @@
+* {
+    font-family: 'Georgia', serif;
+  }
+
+  body {
+    background-image: url('https://images.pexels.com/photos/15472155/pexels-photo-15472155.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+/* Componente Card */
+.card-mui-container {
+    margin: 0 auto; /* Para centrar horizontalmente */
+    margin: 10px;
+    max-width: 800px;
+    border: 3px solid black; /* Agregar un borde */
+    padding: 10px; /* Añadir un poco de espacio alrededor del contenido */
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    margin: 10px;
+  }
+   
+  
+.typography-news {
+    padding: 5px;
+}
+
+/* Componente Nav-Bar */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    color: white;
+    height: 30px;
+  }
+  
+  .nav-logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+/*componente form*/
+.form-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    border-radius: 20px;
+    margin: 40px
+  }
+  
+  
+  .form-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .form-textfield {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  Button {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+/*componente footer*/
+.body {
+    position: relative;
+    padding-bottom: 50px; /* Ajustar el tamaño del footer */
+    min-height: 100vh;
+  }
+  
+  .footer-container {
+    position: fixed;
+    bottom: 0;
+    width: 97%;
+    height: 20px; /* Establecer la altura del footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    color: white;
+  }
+  
+  
+  .footer-logo {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+  }
+  
+  .footer-contact span:first-child {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+/*Componente Home*/
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin: 40px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+
+  }
+  
+  
