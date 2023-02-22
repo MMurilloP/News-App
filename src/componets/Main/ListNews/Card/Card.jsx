@@ -7,7 +7,7 @@ class Card extends Component {
       <div className="news-card">
           <p><strong>Titular: </strong> {this.props.data.abstract}</p>
           <p><strong>Resumen:</strong>{this.props.data.snippet} </p>
-          <a href={this.props.data.web_url} target="_blank" without rel="noreferrer">Ve a la noticia</a>
+          <a href={this.props.data.web_url} target="_blank" rel="noopener noreferrer">Ve a la noticia</a>
           <p>Fuente: {this.props.data.source}</p>
           <button
             className="css-button-sliding-to-left--red"
@@ -18,6 +18,5 @@ class Card extends Component {
     );
   }
 }
-
 
 export default Card;
