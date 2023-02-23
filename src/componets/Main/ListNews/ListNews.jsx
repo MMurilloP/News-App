@@ -7,7 +7,7 @@ class ListNews extends Component {
     super(props);
     this.state = {
       appNews: [],
-      newsTopic: "Sports"
+      newsTopic: "Health"
     };
   }
 
@@ -16,7 +16,7 @@ class ListNews extends Component {
   }
 
   fetchApiNews = async () => {
-    const apiKey = "NiiBVI0AJMHf9GbLnJxertUihstuAU3P";
+    const apiKey = process.env.REACT_APP_API_KEY;
     const { newsTopic } = this.state;
     const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${newsTopic}&api-key=${apiKey}`;
     const response = await fetch(url);
@@ -30,9 +30,10 @@ class ListNews extends Component {
     const remainingNews = this.state.appNews.filter((event, j) => i !== j);
     this.setState({ appNews: remainingNews });
   };
-
+  
   printCards = () => {
-    return this.state.appNews.map((event, i) => (
+    const appNewsSlice = this.state.appNews.slice(0, 5); //saco solo 5 noticias de la api.
+    return appNewsSlice.map((event, i) => (
       <Card data={event} remove={() => this.deleteNew(i)} key={uuidv4()} />
     ));
   };
