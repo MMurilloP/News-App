@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import '../../../styles/styles.css'
+import userContext from '../../../context/userContext'; //contexto
+import Button from '@mui/material/Button';
+
+
 
 class Nav extends Component {
   render() {
@@ -17,6 +21,13 @@ class Nav extends Component {
           <Link className="nav-link" to="/list">
             Lista de Noticias
           </Link>
+          <userContext.Consumer>
+        {({ logout, user }) => user ?
+          <span>Hola, {user} <Button variant="contained" size="small" onClick={logout}>Logout</Button></span>
+          : ""
+        }
+      </userContext.Consumer>
+
         </div>
       </div>
     );
