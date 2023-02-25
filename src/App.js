@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
-  const [user, setUser] = useState("Guillermu"); // state para componente funcional
+  const [user, setUser] = useState(""); // state para componente funcional
 
   const login = (name) => setUser(name); // user = name. Ej. name="Guille" --> user="Guille"
   const logout = () => setUser(""); // user = ""
