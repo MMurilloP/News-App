@@ -38,7 +38,7 @@ class Form extends Component {
   render() {
     return (
       <div className="form-container">
-        <h1>CREA UNA NUEVA NOTICIA:</h1>
+        <h1>Añade tú noticia:</h1>
         <Card variant="outlined">
           <CardMedia
             component="img"
