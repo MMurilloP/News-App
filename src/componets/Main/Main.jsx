@@ -22,7 +22,7 @@ class Main extends Component {
     return (
       <div>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/form"
             element={<Form onSubmit={this.addNews} />}

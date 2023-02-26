@@ -12,7 +12,7 @@ class Nav extends Component {
       <div className="nav-container">
         <div className="nav-logo"> NEWS APP</div>
         <div className="nav-links">
-          <Link className="nav-link" to="/home">
+          <Link className="nav-link" to="/">
             Home
           </Link>
           <Link className="nav-link" to="/form">
