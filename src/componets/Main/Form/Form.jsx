@@ -1,54 +1,92 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import CardMedia from "@mui/material/CardMedia";
+import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import '../../../styles/styles.css'
+import "../../../styles/styles.css";
 
-export class Form extends Component {
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      img:"",
+      url: "",
+      snippet: "",
+      abstract: "",
+    };
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { url, snippet, abstract } = this.state;
+    const newNews = {
+      web_url: url,
+      abstract: abstract,
+      snippet: snippet,
+    };
+    this.props.onSubmit(newNews);
+  };
 
   render() {
     return (
-      <div className='form-container'>
+      <div className="form-container">
         <h1>CREA UNA NUEVA NOTICIA:</h1>
-        <Box
-          component="form"
-          sx={{
-            '& > :not(style)': { m: 1, width: '25ch' },
-          }}
-          noValidate
-          autoComplete="off"
-        >
+        <Card variant="outlined">
+          <CardMedia
+            component="img"
+            height="100"
+            image="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_1280.jpg"
+            alt="picture"
+          />
+          <CardContent>
             <TextField
-              id="standard-basic"
+              required
+              id="abstract"
               label="Titular"
               variant="standard"
               className="form-textfield"
+              onChange={this.handleChange}
             />
             <TextField
-              id="standard-basic"
+              required
+              id="snippet"
               label="Noticia"
               variant="standard"
               className="form-textfield"
-              multiline
-              rows={4}
+              onChange={this.handleChange}
             />
             <TextField
-              id="standard-basic"
+              required
+              id="url"
               label="Url"
               variant="standard"
               className="form-textfield"
+              onChange={this.handleChange}
             />
+          </CardContent>
+
+          <CardActions>
             <Button
               variant="contained"
-              className="css-button-sliding-to-left--red"
-              onClick={""}
+              color="primary"
+              type="submit"
+              onClick={this.handleSubmit}
             >
-              CREAR NOTICIA
+              Añadir
             </Button>
-        </Box>  
+          </CardActions>
+        </Card>
       </div>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;

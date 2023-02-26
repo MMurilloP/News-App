@@ -1,21 +1,22 @@
 import React, { Component } from "react";
-import '../../styles/styles.css'
+import "../../styles/styles.css";
 
 class Footer extends Component {
   render() {
     return (
-      <div className="footer-container">
-        
-        <div className="footer-contact">
-          <span>Contacto:</span>
-          <span>+1 234 567 890</span>
-          <span>contacto@xxxxxx.com</span>
+      <div class="footer-container">
+        <div class="footer-content">  
+          <div class="footer-contact">
+            <span>Contacto:</span>
+            <span>Teléfono: 123-456-789</span>
+            <span>Correo: info@newsapp.com</span>
+          </div>
+          <div class="footer-logo">NEWS APP</div>
         </div>
-        <div className="footer-logo">News App ®</div>
       </div>
     );
-  }s
+  }
+  s;
 }
 
 export default Footer;
-
