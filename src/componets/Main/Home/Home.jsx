@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import userContext from "../../../context/userContext"; // contexto
+import userContext from "../../../context/userContext"; 
 
 import "../../../styles/styles.css";
 
 class Home extends Component {
-  static contextType = userContext; //Contexto desde JS con clases
+  static contextType = userContext; 
   constructor(props) {
     super(props);
     this.username = React.createRef();
@@ -17,7 +17,7 @@ class Home extends Component {
   }
 
   sendName = () => {
-    const { login } = this.context; // Consume contexto desde JS
+    const { login } = this.context; 
     login(this.state.username); 
     alert("Nombre enviado: " + this.state.username);
     this.username.current.value = "";
@@ -25,7 +25,7 @@ class Home extends Component {
   };
 
   handleChange = () => {
-    const username = this.username.current.value; //Leer campo por referencia
+    const username = this.username.current.value; 
     this.setState({ username });
   };
 
@@ -64,36 +64,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// class Home extends Component {
-//   render() {
-//     return (
-//       <div className="home-container">
-//         <h1>BIENVENIDO A NEWS-APP</h1>
-//         <Box
-//           component="form"
-//           sx={{
-//             '& > :not(style)': { m: 1, width: '25ch' },
-//           }}
-//           noValidate
-//           autoComplete="off"
-//         >
-//           <TextField
-//             id="standard-basic"
-//             label="Introduce tú nombre"
-//             variant="standard"
-//             className="form-textfield"
-//           />
-//           <Button
-//             variant="contained"
-//             className="css-button-sliding-to-left--red"
-//             onClick={""}
-//           >
-//             LOGIN
-//           </Button>
-//         </Box>
-//       </div>
-//     );
-//   }
-// }
-// export default Home;

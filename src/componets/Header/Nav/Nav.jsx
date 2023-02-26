@@ -19,14 +19,16 @@ class Nav extends Component {
             Formulario
           </Link>
           <Link className="nav-link" to="/list">
-            Lista de Noticias
+            Listado de Noticias
           </Link>
+        <div className="userLogged">
           <userContext.Consumer>
         {({ logout, user }) => user ?
           <span>Hola, {user} <Button variant="contained" size="small" onClick={logout}>Logout</Button></span>
           : ""
         }
       </userContext.Consumer>
+      </div>
 
         </div>
       </div>

@@ -1,45 +1,55 @@
-import React, { Component } from 'react'
-// import Button from "@mui/material/Button";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import '../../../styles/styles.css'
+import React, { Component } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import CardMedia from "@mui/material/CardMedia";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import "../../../styles/styles.css";
 
-export class Form extends Component {
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      img:"",
+      url: "",
+      snippet: "",
+      abstract: "",
+    };
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.name.value);
-    const newsName = event.target.titular.value;
-    const noticia = event.target.noticia.value;
-    const url = event.target.url.value;
-
-    const newEvent = {
-      newsName,
-      noticia,
-      url,
+    const { url, snippet, abstract } = this.state;
+    const newNews = {
+      web_url: url,
+      abstract: abstract,
+      snippet: snippet,
     };
-
-    console.log(newEvent);
-    alert("Enviado!!!!!!");
-    // Guardar nuevo evento
-    // (En el futuro puede ser un POST a una API)
-    this.setState({ events: [...this.state.events, newEvent] });
-  }
+    this.props.onSubmit(newNews);
+  };
 
   render() {
     return (
-      <div className='form-container'>
+      <div className="form-container">
         <h1>CREA UNA NUEVA NOTICIA:</h1>
-        <Box onSubmit={this.handleSubmit}
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-          >
+        <Card variant="outlined">
+          <CardMedia
+            component="img"
+            height="100"
+            image="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_1280.jpg"
+            alt="picture"
+          />
+          <CardContent>
             <TextField
               required
-              id="titular"
+              id="abstract"
               label="Titular"
               variant="standard"
               className="form-textfield"
@@ -47,10 +57,11 @@ export class Form extends Component {
             />
             <TextField
               required
-              id="noticia"
+              id="snippet"
               label="Noticia"
               variant="standard"
               className="form-textfield"
+              onChange={this.handleChange}
             />
             <TextField
               required
@@ -58,13 +69,24 @@ export class Form extends Component {
               label="Url"
               variant="standard"
               className="form-textfield"
+              onChange={this.handleChange}
             />
-            <input type="submit" value="Añadir" />
+          </CardContent>
 
-        </Box>  
+          <CardActions>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              onClick={this.handleSubmit}
+            >
+              Añadir
+            </Button>
+          </CardActions>
+        </Card>
       </div>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;

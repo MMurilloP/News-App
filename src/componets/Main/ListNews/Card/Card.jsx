@@ -11,7 +11,7 @@ class Cards extends Component {
   render() {
     return (
       <div className="cards-container">
-        <Card className="card-mui-container" sx={{ maxWidth: 800 }}>
+        <Card className="card-mui-container" >
           <CardActionArea>
             <CardMedia
               component="img"
@@ -20,22 +20,36 @@ class Cards extends Component {
               alt="picture"
             />
             <CardContent>
-              <Typography className="typography-news" gutterBottom variant="h4" component="div">
+              <Typography
+                className="typography-news"
+                gutterBottom
+                variant="h5"
+                component="div"
+              >
                 {this.props.data.abstract}
               </Typography>
-              <Typography className="typography-news"variant="body1" color="text.secondary">
+              <Typography
+                className="typography-news"
+                gutterBottom
+                variant="body1"
+                color="text.secondary"
+                component="div"
+              >
                 {this.props.data.snippet}
               </Typography>
-              <Typography className="typography-news"gutterBottom variant="h7" component="div">
+              <Typography
+                className="typography-news"
+                gutterBottom
+                variant="body2"
+                component="div"
+              >
                 <a
                   href={this.props.data.web_url}
                   target="_blank"
+                  variant="body2"
                   rel="noopener noreferrer">
                   {this.props.data.web_url}
                 </a>
-              </Typography>
-              <Typography className="typography-news" gutterBottom variant="h9" component="div">
-                Source: {this.props.data.source}
               </Typography>
             </CardContent>
           </CardActionArea>
