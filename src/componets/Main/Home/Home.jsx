@@ -32,7 +32,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-        <h1>BIENVENIDO A NEWS-APP</h1>
+        <h1>Bienvenido a News-App</h1>
         <Box
           component="form"
           sx={{

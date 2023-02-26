@@ -13,6 +13,7 @@ h1 {
   text-align: center;
 }
 
+
 /* Componente Card */
 .card-mui-container {
   margin: 20px ;
@@ -93,14 +94,14 @@ div > .listTopic {
   margin: 40px;
   background-color: #f9f9f9;
   border-radius: 20px;
-  font-size: 2vh;
+  font-size: 1.5vh;
   border: 3px solid black;
 }
 
 .form-textfield {
   width: 100%;
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .Button {
@@ -139,6 +140,7 @@ div > .listTopic {
   margin: 40px;
   background-color: #f9f9f9;
   border-radius: 20px;
-  font-size: 2vh;
+  font-size: 1.5vh;
   border: 3px solid black;
 }
+

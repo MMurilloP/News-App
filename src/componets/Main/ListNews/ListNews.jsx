@@ -38,12 +38,11 @@ class ListNews extends Component {
   };
 
   render() {
-    const { newsTopic } = this.state;
 
     return (
       <>
       <div className="listTopic">
-        <h1>NOTICIAS sobre: {newsTopic} </h1>
+        <h1>Listado de NOTICIAS  </h1>
       </div>
       {this.printCards()}
       </>
