@@ -4,8 +4,8 @@ import "../../styles/styles.css";
 class Footer extends Component {
   render() {
     return (
-      <div class="footer-container">
-          <div class="footer-logo">NEWS APP ®</div>
+      <div className="footer-container">
+          <div className="footer-logo">NEWS APP ®</div>
       </div>
     );
   }

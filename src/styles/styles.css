@@ -35,19 +35,17 @@ h1 {
 /* Componente Nav-Bar */
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: black;
-  padding: 10px;
+  padding: 20px;
   color: white;
-  height: 50px;
+  height: auto;
   width: 100%;
 }
 
 .nav-logo {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-right: 20px;
 }
 
 .nav-links {
@@ -59,7 +57,7 @@ h1 {
   color: white;
   text-decoration: none;
   margin: 0 10px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .nav-link:hover {
@@ -68,11 +66,7 @@ h1 {
 
 .userLogged {
   padding: 10px;
-  font-size: 0.8rem;
-  margin-right: 10px;
 }
-
-
 
 /*Componente ListNews*/
 
@@ -128,7 +122,7 @@ div > .listTopic {
   font-weight: bold;
   text-align: right;
   padding: 5px;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 /*Componente Home*/
